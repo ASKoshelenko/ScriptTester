@@ -1,18 +1,52 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const { exec } = require('child_process');
-const path = require('path');
-const fs = require('fs');
 const cors = require('cors');
+const { exec } = require('child_process');
 
 const app = express();
-const PORT = 5001;
+const port = 5001;
+const sandboxDir = '/home/ask/ubuntu-scripts-tester/sandbox';
+const logFile = '/home/ask/ubuntu-scripts-tester/log.txt';
 
-app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
 
-const sandboxDir = path.join(__dirname, '..', 'sandbox');
-const logFile = path.join(sandboxDir, 'log.txt');
+app.post('/setup-environment', (req, res) => {
+  const script = req.body.script;
+  const command = setupEnvironment(script);
+
+  exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error setting up environment: ${error.message}`);
+      return res.status(500).json({ error: `Error setting up environment: ${stderr || error.message}` });
+    }
+    res.json({ output: stdout });
+  });
+});
+
+app.post('/destroy-environment', (req, res) => {
+  const command = `rm -rf ${sandboxDir} && echo "Environment destroyed"`;
+
+  exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error destroying environment: ${error.message}`);
+      return res.status(500).json({ error: `Error destroying environment: ${stderr || error.message}` });
+    }
+    res.json({ output: stdout });
+  });
+});
+
+app.post('/run-script', (req, res) => {
+  const script = req.body.script;
+  const command = runScript(script);
+
+  exec(command, { cwd: sandboxDir }, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error running script: ${error.message}`);
+      return res.status(500).json({ error: `Error running script: ${stderr || error.message}` });
+    }
+    res.json({ output: stdout });
+  });
+});
 
 const setupEnvironment = (script) => {
   switch (script) {
@@ -41,7 +75,7 @@ const setupEnvironment = (script) => {
     case '12_recursive_change_permissions.sh':
       return `mkdir -p ${sandboxDir}/test_dir && touch ${sandboxDir}/test_dir/file1 && chmod 644 ${sandboxDir}/test_dir/file1 && echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '13_compare_directories.sh':
-      return `mkdir -p ${sandboxDir}/dir1 ${sandboxDir}/dir2 && echo "File in dir1" > ${sandboxDir}/dir1/file1.txt && echo "File in dir2" > ${sandboxDir}/dir2/file1.txt && echo "Настройка песочницы для тестирования ${script} завершена"`;
+      return `mkdir -p ${sandboxDir}/dir1 && mkdir -p ${sandboxDir}/dir2 && echo "File in dir1" > ${sandboxDir}/dir1/file1.txt && echo "File in dir2" > ${sandboxDir}/dir2/file1.txt && echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '14_get_mac_addresses.sh':
       return `echo "Настройка песочницы не требуется для тестирования ${script}"`;
     case '15_list_authorized_users.sh':
@@ -69,7 +103,7 @@ const setupEnvironment = (script) => {
     case '26_pack_directory_with_attributes.sh':
       return `mkdir -p ${sandboxDir}/test_dir && touch ${sandboxDir}/test_dir/file1 && echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '27_copy_directory_structure.sh':
-      return `mkdir -p ${sandboxDir}/test_dir/subdir1 ${sandboxDir}/test_dir/subdir2 && echo "Настройка песочницы для тестирования ${script} завершена"`;
+      return `mkdir -p ${sandboxDir}/test_dir/subdir1 && mkdir -p ${sandboxDir}/test_dir/subdir2 && echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '28_list_users_alphabetically.sh':
       return `echo "Настройка песочницы не требуется для тестирования ${script}"`;
     case '29_list_system_users_sorted_by_id.sh':
@@ -85,7 +119,7 @@ const setupEnvironment = (script) => {
     case '34_stop_long_running_processes.sh':
       return `echo "Настройка песочницы не требуется для тестирования ${script}"`;
     case '35_delete_orphaned_jpeg_files.sh':
-      return `mkdir -p ${sandboxDir}/test_dir && touch ${sandboxDir}/test_dir/file1.txt ${sandboxDir}/test_dir/file1.jpeg ${sandboxDir}/test_dir/file2.jpeg && echo "Настройка песочницы для тестирования ${script} завершена"`;
+      return `mkdir -p ${sandboxDir}/test_dir && touch ${sandboxDir}/test_dir/file1.txt && touch ${sandboxDir}/test_dir/file1.jpeg && touch ${sandboxDir}/test_dir/file2.jpeg && echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '36_find_ip_address.sh':
       return `echo "Настройка песочницы не требуется для тестирования ${script}"`;
     case '37_get_all_ip_addresses_from_file.sh':
@@ -107,174 +141,99 @@ const setupEnvironment = (script) => {
   }
 };
 
-const cleanupEnvironment = () => {
-  return `rm -rf ${sandboxDir} && echo "Очистка песочницы завершена"`;
-};
-
-app.post('/setup-environment', (req, res) => {
-  const { script } = req.body;
-
-  const setupCommand = setupEnvironment(script);
-
-  exec(setupCommand, (error, stdout, stderr) => {
-    if (error) {
-      fs.appendFileSync(logFile, `Error setting up environment for ${script}: ${stderr}\n`);
-      return res.status(500).json({ error: stderr });
-    }
-    fs.appendFileSync(logFile, `Environment setup for ${script} completed: ${stdout}\n`);
-    res.json({ output: stdout });
-  });
-});
-
-app.post('/run-script', (req, res) => {
-  const { script } = req.body;
-  const scriptPath = path.join(__dirname, 'scripts', script);
-
-  let command = '';
+const runScript = (script) => {
   switch (script) {
     case '1_find_system_groups.sh':
-      command = `cat /etc/group | grep '^[^:]*:[^:]*:[1-9][0-9]*:' | sort -u -t: -k3,3 > ${sandboxDir}/system_groups.txt && cat ${sandboxDir}/system_groups.txt`;
-      break;
+      return `cat /etc/group | grep '^[^:]*:[^:]*:[1-9][0-9]*:' | sort -u -t: -k3,3 > ${sandboxDir}/system_groups.txt && echo "Task completed"`;
     case '2_find_files_with_access_rights.sh':
-      command = `find ${sandboxDir}/test_dir -perm -u=x,g=w`;
-      break;
+      return `find . -perm -u=x,g=w && echo "Task completed"`;
     case '3_find_all_scripts.sh':
-      command = `find ${sandboxDir}/test_dir -type f -name '*.sh'`;
-      break;
+      return `find . -type f -name '*.sh' && echo "Task completed"`;
     case '4_search_scripts_by_user.sh':
-      command = `find ${sandboxDir}/test_dir -type f -name '*.sh' -user $(whoami)`;
-      break;
+      return `find . -type f -name '*.sh' -user $(whoami) && echo "Task completed"`;
     case '5_recursive_search_words.sh':
-      command = `grep -r 'word_to_search' --include \\*.txt ${sandboxDir}/test_dir`;
-      break;
+      return `grep -r 'word_to_search' --include \\*.txt && echo "Task completed"`;
     case '6_find_duplicate_files.sh':
-      command = `find ${sandboxDir}/test_dir -type f -exec cksum {} + | sort | uniq -w32 -dD`;
-      break;
+      return `find . -type f -exec cksum {} + | sort | uniq -w32 -dD && echo "Task completed"`;
     case '7_find_symbolic_links.sh':
-      command = `find ${sandboxDir}/test_dir -type l`;
-      break;
+      return `find . -type l && echo "Task completed"`;
     case '8_find_hard_links.sh':
-      command = `find ${sandboxDir}/test_dir -samefile ${sandboxDir}/test_dir/file1`;
-      break;
+      return `find . -samefile && echo "Task completed"`;
     case '9_find_names_by_inode.sh':
-      command = `find ${sandboxDir}/test_dir -inum $(ls -i ${sandboxDir}/test_dir/file1 | awk '{print $1}')`;
-      break;
+      return `find . -inum $(stat -c '%i' ${sandboxDir}/test_dir/file1) && echo "Task completed"`;
     case '10_find_names_by_inode_multiple_partitions.sh':
-      command = `find ${sandboxDir} /media -inum $(ls -i ${sandboxDir}/test_dir/file1 | awk '{print $1}')`;
-      break;
+      return `find /mnt /media -inum $(stat -c '%i' ${sandboxDir}/test_dir/file1) && echo "Task completed"`;
     case '11_delete_file_with_links.sh':
-      command = `find ${sandboxDir}/test_dir -type f -links +1 -exec rm {} +`;
-      break;
+      return `find . -type f -links +1 -exec rm {} + && echo "Task completed"`;
     case '12_recursive_change_permissions.sh':
-      command = `chmod -R 755 ${sandboxDir}/test_dir`;
-      break;
+      return `chmod -R 755 ${sandboxDir}/test_dir && echo "Task completed"`;
     case '13_compare_directories.sh':
-      command = `diff -qr ${sandboxDir}/dir1 ${sandboxDir}/dir2`;
-      break;
+      return `diff -qr ${sandboxDir}/dir1 ${sandboxDir}/dir2 && echo "Task completed"`;
     case '14_get_mac_addresses.sh':
-      command = `ip link show | grep link/ether`;
-      break;
+      return `ip link show | grep link/ether && echo "Task completed"`;
     case '15_list_authorized_users.sh':
-      command = `who`;
-      break;
+      return `who && echo "Task completed"`;
     case '16_list_active_network_connections.sh':
-      command = `netstat -an | grep ESTABLISHED | wc -l`;
-      break;
+      return `netstat -an | grep ESTABLISHED | wc -l && echo "Task completed"`;
     case '17_reassign_symbolic_link.sh':
-      command = `ln -sf /new/path/to/file ${sandboxDir}/test_dir/link1`;
-      break;
+      return `ln -sf /new/path/to/file ${sandboxDir}/test_dir/link1 && echo "Task completed"`;
     case '18_create_symbolic_links.sh':
-      command = `while IFS= read -r line; do set -- $line; ln -s $1 $2; done < ${sandboxDir}/file_list`;
-      break;
+      return `while IFS= read -r line; do set -- $line; ln -s $1 $2; done < ${sandboxDir}/file_list && echo "Task completed"`;
     case '19_copy_directory_with_links.sh':
-      command = `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy`;
-      break;
+      return `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy && echo "Task completed"`;
     case '20_copy_directory_with_symlinks.sh':
-      command = `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy`;
-      break;
+      return `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy && echo "Task completed"`;
     case '21_copy_with_attributes.sh':
-      command = `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy`;
-      break;
+      return `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy && echo "Task completed"`;
     case '22_convert_relative_to_direct_links.sh':
-      command = `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(readlink -f $0) $0' {} \\;`;
-      break;
+      return `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(readlink -f $0) $0' {} \\; && echo "Task completed"`;
     case '23_convert_direct_to_relative_links.sh':
-      command = `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(realpath --relative-to=$(dirname $0) $(readlink $0)) $0' {} \\;`;
-      break;
+      return `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(realpath --relative-to=$(dirname $0) $(readlink $0)) $0' {} \\; && echo "Task completed"`;
     case '24_find_and_delete_broken_links.sh':
-      command = `find ${sandboxDir}/test_dir -xtype l -delete`;
-      break;
+      return `find ${sandboxDir}/test_dir -xtype l -delete && echo "Task completed"`;
     case '25_unpack_archive.sh':
-      command = `tar -xvf ${sandboxDir}/test_archive.tar -C ${sandboxDir}/unpacked`;
-      break;
+      return `tar -xvf ${sandboxDir}/test_archive.tar -C ${sandboxDir}/unpacked && echo "Task completed"`;
     case '26_pack_directory_with_attributes.sh':
-      command = `tar -cvf ${sandboxDir}/packed_archive.tar ${sandboxDir}/test_dir`;
-      break;
+      return `tar -cvf ${sandboxDir}/packed_archive.tar ${sandboxDir}/test_dir && echo "Task completed"`;
     case '27_copy_directory_structure.sh':
-      command = `find ${sandboxDir}/test_dir -type d -exec mkdir -p ${sandboxDir}/test_dir_copy/{} \\;`;
-      break;
+      return `find ${sandboxDir}/test_dir -type d -exec mkdir -p ${sandboxDir}/test_dir_copy/{} \\; && echo "Task completed"`;
     case '28_list_users_alphabetically.sh':
-      command = `cut -d: -f1 /etc/passwd | sort`;
-      break;
+      return `cut -d: -f1 /etc/passwd | sort && echo "Task completed"`;
     case '29_list_system_users_sorted_by_id.sh':
-      command = `awk -F: '$3 < 1000 {print $1, $3}' /etc/passwd | sort -k2,2n`;
-      break;
+      return `awk -F: '$3 < 1000 {print $1, $3}' /etc/passwd | sort -k2,2n && echo "Task completed"`;
     case '30_list_users_sorted_by_reverse_id.sh':
-      command = `awk -F: '{print $1, $3}' /etc/passwd | sort -k2,2nr`;
-      break;
+      return `awk -F: '{print $1, $3}' /etc/passwd | sort -k2,2nr && echo "Task completed"`;
     case '31_list_users_without_authorization_rights.sh':
-      command = `awk -F: '$7 ~ /nologin/ {print $1}' /etc/passwd`;
-      break;
+      return `awk -F: '$7 ~ /nologin/ {print $1}' /etc/passwd && echo "Task completed"`;
     case '32_list_users_with_or_without_terminal.sh':
-      command = `awk -F: '{print $1, $7}' /etc/passwd`;
-      break;
+      return `awk -F: '{print $1, $7}' /etc/passwd && echo "Task completed"`;
     case '33_download_all_links_from_page.sh':
-      command = `wget -r -l1 -H -nd -A.html,.htm -e robots=off http://example.com`;
-      break;
+      return `wget -r -l1 -H -nd -A.html,.htm -e robots=off http://example.com && echo "Task completed"`;
     case '34_stop_long_running_processes.sh':
-      command = `ps -eo pid,etime,cmd | awk -F ' ' '$2 ~ /[0-9]+-/ {print $1}' | xargs kill -9`;
-      break;
+      return `ps -eo pid,etime,cmd | awk -F ' ' '$2 ~ /[0-9]+-/ {print $1}' | xargs kill -9 && echo "Task completed"`;
     case '35_delete_orphaned_jpeg_files.sh':
-      command = `for f in ${sandboxDir}/test_dir/*.jpeg; do [ ! -f \${f%.jpeg}.txt ] && rm $f; done`;
-      break;
+      return `for f in ${sandboxDir}/test_dir/*.jpeg; do [ ! -f \${f%.jpeg}.txt ] && rm $f; done && echo "Task completed"`;
     case '36_find_ip_address.sh':
-      command = `hostname -I`;
-      break;
+      return `hostname -I && echo "Task completed"`;
     case '37_get_all_ip_addresses_from_file.sh':
-      command = `cat ${sandboxDir}/test_dir/ips.txt`;
-      break;
+      return `cat ${sandboxDir}/test_dir/ips.txt && echo "Task completed"`;
     case '38_find_active_hosts.sh':
-      command = `nmap -iL ${sandboxDir}/test_dir/hosts.txt`;
-      break;
+      return `nmap -iL ${sandboxDir}/test_dir/hosts.txt && echo "Task completed"`;
     case '39_get_raised_interfaces_ips.sh':
-      command = `ip -o -4 addr show up`;
-      break;
+      return `ip -o -4 addr show up && echo "Task completed"`;
     case '40_get_subdomains_from_ssl.sh':
-      command = `openssl s_client -connect example.com:443 -showcerts | openssl x509 -noout -text | grep DNS`;
-      break;
+      return `openssl s_client -connect example.com:443 -showcerts | openssl x509 -noout -text | grep DNS && echo "Task completed"`;
     case '41_extract_path_name_extension.sh':
-      command = `file='/path/to/file.txt'; path=$(dirname $file); name=$(basename $file .txt); ext=\${file##*.}; echo $path $name $ext`;
-      break;
+      return `file='/path/to/file.txt'; path=$(dirname $file); name=$(basename $file .txt); ext=\${file##*.}; echo $path $name $ext && echo "Task completed"`;
     case '42_delete_files_by_size_and_pattern.sh':
-      command = `find ${sandboxDir}/test_dir -type f -name 'pattern' -size +100c -delete`;
-      break;
+      return `find ${sandboxDir}/test_dir -type f -name 'pattern' -size +100c -delete && echo "Task completed"`;
     case '43_create_files_with_identifiers.sh':
-      command = `while IFS=' ' read -r filename identifier; do echo $identifier > $filename; done < ${sandboxDir}/file_list`;
-      break;
+      return `while IFS=' ' read -r filename identifier; do echo $identifier > $filename; done < ${sandboxDir}/file_list && echo "Task completed"`;
     default:
-      command = `bash ${scriptPath}`;
+      return `echo "Нет описания задачи для скрипта ${script}"`;
   }
+};
 
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      fs.appendFileSync(logFile, `Error running script ${script}: ${stderr}\n`);
-      return res.status(500).json({ error: stderr });
-    }
-    fs.appendFileSync(logFile, `Script ${script} output: ${stdout}\n`);
-    res.json({ output: stdout });
-  });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
