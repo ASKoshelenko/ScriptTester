@@ -1,61 +1,67 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const { exec } = require('child_process');
-const { commands, sandboxDir } = require('./scripts/commands');
+const { commands, setupCommands, sandboxDir } = require('./scripts/commands');
 
 const app = express();
-const port = 5001;
-const logFile = '/home/ask/ubuntu-scripts-tester/log.txt';
-
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.post('/setup-environment', (req, res) => {
-  const script = req.body.script;
-  const command = commands[script];
+  const { script } = req.body;
+  const setupCommand = setupCommands[script];
 
-  if (!command) {
-    return res.status(400).json({ error: 'Invalid script name' });
+  if (!setupCommand) {
+    return res.status(400).json({ error: 'Invalid script' });
   }
 
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error setting up environment: ${error.message}`);
-      return res.status(500).json({ error: `Error setting up environment: ${stderr || error.message}` });
+  exec(setupCommand, (err, stdout, stderr) => {
+    if (err) {
+      return res.status(500).json({ error: stderr });
     }
-    res.json({ output: stdout });
-  });
-});
 
-app.post('/destroy-environment', (req, res) => {
-  const command = `rm -rf ${sandboxDir} && echo "Environment destroyed"`;
-
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error destroying environment: ${error.message}`);
-      return res.status(500).json({ error: `Error destroying environment: ${stderr || error.message}` });
-    }
     res.json({ output: stdout });
   });
 });
 
 app.post('/run-script', (req, res) => {
-  const script = req.body.script;
+  const { script } = req.body;
   const command = commands[script];
 
   if (!command) {
-    return res.status(400).json({ error: 'Invalid script name' });
+    return res.status(400).json({ error: 'Invalid script' });
   }
 
-  exec(command, { cwd: sandboxDir }, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error running script: ${error.message}`);
-      return res.status(500).json({ error: `Error running script: ${stderr || error.message}` });
+  exec(command, (err, stdout, stderr) => {
+    if (err) {
+      return res.status(500).json({ error: stderr });
     }
+
     res.json({ output: stdout });
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.post('/destroy-environment', (req, res) => {
+  exec(`sudo rm -rf ${sandboxDir}`, (err, stdout, stderr) => {
+    if (err) {
+      return res.status(500).json({ error: stderr });
+    }
+
+    res.json({ output: 'Environment destroyed' });
+  });
 });
+
+app.get('/get-command/:script', (req, res) => {
+  const { script } = req.params;
+  const command = commands[script];
+
+  if (!command) {
+    return res.status(404).json({ error: 'Command not found' });
+  }
+
+  res.json({ command });
+});
+
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
