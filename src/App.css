@@ -1,33 +1,70 @@
-.App {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+.script-accordion {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
-h2 {
-  color: #333;
+.script-header {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-button {
-  background-color: #007BFF;
+.script-content {
+  padding: 10px;
+}
+
+.command-section {
+  background-color: #efeff0;
+  color: rgb(10, 183, 10);
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0px 10px 0;
+}
+
+.setup-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #ffc107;
   color: white;
   border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin: 10px 0;
   border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button:disabled {
-  background-color: #ccc;
+.run-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-pre {
-  background-color: #f8f8f8;
+.destroy-button {
+  background-color: #dc3545;
+}
+
+.output-section {
+  margin-top: 20px;
+}
+
+.output-section h4 {
+  margin-bottom: 10px;
+}
+
+.output-section pre {
+  background-color: #f8f9fa;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-div {
-  margin: 20px 0;
+.error-section {
+  margin-top: 20px;
+  color: red;
 }

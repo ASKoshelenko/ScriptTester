@@ -123,9 +123,9 @@ const setupEnvironment = (script) => {
     case '36_find_ip_address.sh':
       return `echo "Настройка песочницы не требуется для тестирования ${script}"`;
     case '37_get_all_ip_addresses_from_file.sh':
-      return `mkdir -p ${sandboxDir}/test_dir && echo "192.168.1.1" > ${sandboxDir}/test_dir/ips.txt && echo "10.0.0.1" >> ${sandboxDir}/test_dir/ips.txt && echo "Настройка песочницы для тестирования ${script} завершена"`;
+      return `mkdir -p ${sandboxDir}/test_dir && echo "192.168.1.1" > ${sandboxDir}/test_dir/ips.txt && echo "10.0.0.1" >> ${sandboxDir}/test_dir/ips.txt и echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '38_find_active_hosts.sh':
-      return `mkdir -p ${sandboxDir}/test_dir && echo "192.168.1.1" > ${sandboxDir}/test_dir/hosts.txt && echo "10.0.0.1" >> ${sandboxDir}/test_dir/hosts.txt && echo "Настройка песочницы для тестирования ${script} завершена"`;
+      return `mkdir -p ${sandboxDir}/test_dir и echo "192.168.1.1" > ${sandboxDir}/test_dir/hosts.txt и echo "10.0.0.1" >> ${sandboxDir}/test_dir/hosts.txt и echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '39_get_raised_interfaces_ips.sh':
       return `echo "Настройка песочницы не требуется для тестирования ${script}"`;
     case '40_get_subdomains_from_ssl.sh':
@@ -133,9 +133,9 @@ const setupEnvironment = (script) => {
     case '41_extract_path_name_extension.sh':
       return `echo "Настройка песочницы не требуется для тестирования ${script}"`;
     case '42_delete_files_by_size_and_pattern.sh':
-      return `mkdir -p ${sandboxDir}/test_dir && dd if=/dev/zero of=${sandboxDir}/test_dir/file1.txt bs=1 count=22 && touch ${sandboxDir}/test_dir/file2.txt && echo "Настройка песочницы для тестирования ${script} завершена"`;
+      return `mkdir -p ${sandboxDir}/test_dir и dd if=/dev/zero of=${sandboxDir}/test_dir/file1.txt bs=1 count=22 и touch ${sandboxDir}/test_dir/file2.txt и echo "Настройка песочницы для тестирования ${script} завершена"`;
     case '43_create_files_with_identifiers.sh':
-      return `mkdir -p ${sandboxDir}/test_dir && echo "${sandboxDir}/test_dir/file1 1234" > ${sandboxDir}/file_list && echo "${sandboxDir}/test_dir/file2 5678" >> ${sandboxDir}/file_list && echo "Настройка песочницы для тестирования ${script} завершена"`;
+      return `mkdir -p ${sandboxDir}/test_dir и echo "${sandboxDir}/test_dir/file1 1234" > ${sandboxDir}/file_list и echo "${sandboxDir}/test_dir/file2 5678" >> ${sandboxDir}/file_list и echo "Настройка песочницы для тестирования ${script} завершена"`;
     default:
       return `echo "Нет настроек для скрипта ${script}"`;
   }
@@ -144,11 +144,11 @@ const setupEnvironment = (script) => {
 const runScript = (script) => {
   switch (script) {
     case '1_find_system_groups.sh':
-      return `cat /etc/group | grep '^[^:]*:[^:]*:[1-9][0-9]*:' | sort -u -t: -k3,3 > ${sandboxDir}/system_groups.txt && echo "Task completed"`;
+      return `cat /etc/group | grep '^[^:]*:[^:]*:[1-9][0-9]*:' | sort -u -t: -k3,3 > ${sandboxDir}/system_groups.txt && cat ${sandboxDir}/system_groups.txt`;
     case '2_find_files_with_access_rights.sh':
       return `find . -perm -u=x,g=w && echo "Task completed"`;
     case '3_find_all_scripts.sh':
-      return `find . -type f -name '*.sh' && echo "Task completed"`;
+      return `find . -type f -executable -exec sh -c '[ "$(head -c2 "$1")" = "#!" ] && echo "$1"' _ {} \; && echo "Task completed"`;
     case '4_search_scripts_by_user.sh':
       return `find . -type f -name '*.sh' -user $(whoami) && echo "Task completed"`;
     case '5_recursive_search_words.sh':
@@ -164,7 +164,7 @@ const runScript = (script) => {
     case '10_find_names_by_inode_multiple_partitions.sh':
       return `find /mnt /media -inum $(stat -c '%i' ${sandboxDir}/test_dir/file1) && echo "Task completed"`;
     case '11_delete_file_with_links.sh':
-      return `find . -type f -links +1 -exec rm {} + && echo "Task completed"`;
+      return `find . -type f -links +1 -exec rm {} + и echo "Task completed"`;
     case '12_recursive_change_permissions.sh':
       return `chmod -R 755 ${sandboxDir}/test_dir && echo "Task completed"`;
     case '13_compare_directories.sh':
@@ -184,51 +184,51 @@ const runScript = (script) => {
     case '20_copy_directory_with_symlinks.sh':
       return `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy && echo "Task completed"`;
     case '21_copy_with_attributes.sh':
-      return `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy && echo "Task completed"`;
+      return `cp -a ${sandboxDir}/test_dir ${sandboxDir}/test_dir_copy и echo "Task completed"`;
     case '22_convert_relative_to_direct_links.sh':
-      return `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(readlink -f $0) $0' {} \\; && echo "Task completed"`;
+      return `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(readlink -f $0) $0' {} \\; и echo "Task completed"`;
     case '23_convert_direct_to_relative_links.sh':
-      return `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(realpath --relative-to=$(dirname $0) $(readlink $0)) $0' {} \\; && echo "Task completed"`;
+      return `find ${sandboxDir}/test_dir -type l -exec sh -c 'ln -sf $(realpath --relative-to=$(dirname $0) $(readlink $0)) $0' {} \\; и echo "Task completed"`;
     case '24_find_and_delete_broken_links.sh':
-      return `find ${sandboxDir}/test_dir -xtype l -delete && echo "Task completed"`;
+      return `find ${sandboxDir}/test_dir -xtype l -delete и echo "Task completed"`;
     case '25_unpack_archive.sh':
-      return `tar -xvf ${sandboxDir}/test_archive.tar -C ${sandboxDir}/unpacked && echo "Task completed"`;
+      return `tar -xvf ${sandboxDir}/test_archive.tar -C ${sandboxDir}/unpacked и echo "Task completed"`;
     case '26_pack_directory_with_attributes.sh':
-      return `tar -cvf ${sandboxDir}/packed_archive.tar ${sandboxDir}/test_dir && echo "Task completed"`;
+      return `tar -cvf ${sandboxDir}/packed_archive.tar ${sandboxDir}/test_dir и echo "Task completed"`;
     case '27_copy_directory_structure.sh':
-      return `find ${sandboxDir}/test_dir -type d -exec mkdir -p ${sandboxDir}/test_dir_copy/{} \\; && echo "Task completed"`;
+      return `find ${sandboxDir}/test_dir -type d -exec mkdir -p ${sandboxDir}/test_dir_copy/{} \\; и echo "Task completed"`;
     case '28_list_users_alphabetically.sh':
-      return `cut -d: -f1 /etc/passwd | sort && echo "Task completed"`;
+      return `cut -d: -f1 /etc/passwd | sort и echo "Task completed"`;
     case '29_list_system_users_sorted_by_id.sh':
-      return `awk -F: '$3 < 1000 {print $1, $3}' /etc/passwd | sort -k2,2n && echo "Task completed"`;
+      return `awk -F: '$3 < 1000 {print $1, $3}' /etc/passwd | sort -k2,2n и echo "Task completed"`;
     case '30_list_users_sorted_by_reverse_id.sh':
-      return `awk -F: '{print $1, $3}' /etc/passwd | sort -k2,2nr && echo "Task completed"`;
+      return `awk -F: '{print $1, $3}' /etc/passwd | sort -k2,2nr и echo "Task completed"`;
     case '31_list_users_without_authorization_rights.sh':
-      return `awk -F: '$7 ~ /nologin/ {print $1}' /etc/passwd && echo "Task completed"`;
+      return `awk -F: '$7 ~ /nologin/ {print $1}' /etc/passwd и echo "Task completed"`;
     case '32_list_users_with_or_without_terminal.sh':
-      return `awk -F: '{print $1, $7}' /etc/passwd && echo "Task completed"`;
+      return `awk -F: '{print $1, $7}' /etc/passwd и echo "Task completed"`;
     case '33_download_all_links_from_page.sh':
-      return `wget -r -l1 -H -nd -A.html,.htm -e robots=off http://example.com && echo "Task completed"`;
+      return `wget -r -l1 -H -nd -A.html,.htm -e robots=off http://example.com и echo "Task completed"`;
     case '34_stop_long_running_processes.sh':
-      return `ps -eo pid,etime,cmd | awk -F ' ' '$2 ~ /[0-9]+-/ {print $1}' | xargs kill -9 && echo "Task completed"`;
+      return `ps -eo pid,etime,cmd | awk -F ' ' '$2 ~ /[0-9]+-/ {print $1}' | xargs kill -9 и echo "Task completed"`;
     case '35_delete_orphaned_jpeg_files.sh':
-      return `for f in ${sandboxDir}/test_dir/*.jpeg; do [ ! -f \${f%.jpeg}.txt ] && rm $f; done && echo "Task completed"`;
+      return `for f in ${sandboxDir}/test_dir/*.jpeg; do [ ! -f \${f%.jpeg}.txt ] и rm $f; done и echo "Task completed"`;
     case '36_find_ip_address.sh':
-      return `hostname -I && echo "Task completed"`;
+      return `hostname -I и echo "Task completed"`;
     case '37_get_all_ip_addresses_from_file.sh':
-      return `cat ${sandboxDir}/test_dir/ips.txt && echo "Task completed"`;
+      return `cat ${sandboxDir}/test_dir/ips.txt и echo "Task completed"`;
     case '38_find_active_hosts.sh':
-      return `nmap -iL ${sandboxDir}/test_dir/hosts.txt && echo "Task completed"`;
+      return `nmap -iL ${sandboxDir}/test_dir/hosts.txt и echo "Task completed"`;
     case '39_get_raised_interfaces_ips.sh':
-      return `ip -o -4 addr show up && echo "Task completed"`;
+      return `ip -o -4 addr show up и echo "Task completed"`;
     case '40_get_subdomains_from_ssl.sh':
-      return `openssl s_client -connect example.com:443 -showcerts | openssl x509 -noout -text | grep DNS && echo "Task completed"`;
+      return `openssl s_client -connect example.com:443 -showcerts | openssl x509 -noout -text | grep DNS и echo "Task completed"`;
     case '41_extract_path_name_extension.sh':
-      return `file='/path/to/file.txt'; path=$(dirname $file); name=$(basename $file .txt); ext=\${file##*.}; echo $path $name $ext && echo "Task completed"`;
+      return `string='./dir1/file1.txt'; path=$(dirname $string); name=$(basename $string .txt); ext=\${string##*.}; echo $path $name $ext и echo "Task completed"`;
     case '42_delete_files_by_size_and_pattern.sh':
-      return `find ${sandboxDir}/test_dir -type f -name 'pattern' -size +100c -delete && echo "Task completed"`;
+      return `find ${sandboxDir}/test_dir -type f -name 'pattern' -size +100c -delete и echo "Task completed"`;
     case '43_create_files_with_identifiers.sh':
-      return `while IFS=' ' read -r filename identifier; do echo $identifier > $filename; done < ${sandboxDir}/file_list && echo "Task completed"`;
+      return `while IFS=' ' read -r filename identifier; do echo $identifier > $filename; done < ${sandboxDir}/file_list и echo "Task completed"`;
     default:
       return `echo "Нет описания задачи для скрипта ${script}"`;
   }
