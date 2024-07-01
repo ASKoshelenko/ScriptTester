@@ -1,70 +1,76 @@
+body {
+  background-color: #1a1a1a;
+  color: #c9c9c9;
+  font-family: 'Arial', sans-serif;
+}
+
 .script-accordion {
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 5px;
   margin-bottom: 10px;
+  padding: 10px;
 }
 
 .script-header {
-  background-color: #f5f5f5;
   cursor: pointer;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.script-header h3 {
+  margin: 0;
+  color: #e6e6e6;
 }
 
 .script-content {
   padding: 10px;
+  background-color: #1a1a1a;
 }
 
 .command-section {
-  background-color: #efeff0;
-  color: rgb(10, 183, 10);
-  padding: 10px;
-  border-radius: 4px;
-  margin: 10px 0px 10px 0;
-}
-
-.setup-button {
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #ffc107;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.run-button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.destroy-button {
-  background-color: #dc3545;
-}
-
-.output-section {
-  margin-top: 20px;
-}
-
-.output-section h4 {
   margin-bottom: 10px;
 }
 
-.output-section pre {
-  background-color: #f8f9fa;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.command-section strong {
+  color: #ffcc00;
 }
 
+.setup-button,
+.run-button {
+  background-color: #444;
+  color: #e6e6e6;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.setup-button:hover,
+.run-button:hover {
+  background-color: #555;
+}
+
+.destroy-button {
+  background-color: #d9534f;
+}
+
+.output-section,
 .error-section {
-  margin-top: 20px;
-  color: red;
+  margin-top: 10px;
+}
+
+.output-section h4,
+.error-section h4 {
+  margin: 0 0 5px 0;
+}
+
+pre {
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 5px;
+  color: #e6e6e6;
 }
