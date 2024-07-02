@@ -1,6 +1,6 @@
 diff -rN -u5 /home/ask/ubuntu-scripts-tester/sandbox/dir1/file1.txt /home/ask/ubuntu-scripts-tester/sandbox/dir2/file1.txt
---- /home/ask/ubuntu-scripts-tester/sandbox/dir1/file1.txt	2024-07-02 09:33:53.920497302 +0000
-+++ /home/ask/ubuntu-scripts-tester/sandbox/dir2/file1.txt	2024-07-02 09:33:53.920497302 +0000
+--- /home/ask/ubuntu-scripts-tester/sandbox/dir1/file1.txt	2024-07-02 12:12:12.224799623 +0000
++++ /home/ask/ubuntu-scripts-tester/sandbox/dir2/file1.txt	2024-07-02 12:12:12.224799623 +0000
 @@ -1 +1 @@
 -File in dir1
 +File in dir2 with difference
