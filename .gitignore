@@ -17,7 +17,30 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# virtual environments
+.venv
+venv
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*~
+
+# server logs
+/server/error.log
+/server/combined.log
+
+# other
+/project_tree.txt
