@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ScriptAccordion from './ScriptAccordion';
-import '../App.css'; // Ensure you have the correct path for your CSS file
+import './ScriptAccordion.css';
 
 const scripts = {
   '1_find_system_groups.sh': {

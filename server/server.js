@@ -18,6 +18,7 @@ app.post('/setup-environment', (req, res) => {
 
   exec(setupCommand, (err, stdout, stderr) => {
     if (err) {
+      console.error(`Error setting up environment for ${script}: ${stderr}`);
       return res.status(500).json({ error: stderr });
     }
 
@@ -35,6 +36,7 @@ app.post('/run-script', (req, res) => {
 
   exec(command, (err, stdout, stderr) => {
     if (err) {
+      console.error(`Error running script ${script}: ${stderr}`);
       return res.status(500).json({ error: stderr });
     }
 
@@ -45,6 +47,7 @@ app.post('/run-script', (req, res) => {
 app.post('/destroy-environment', (req, res) => {
   exec(`sudo rm -rf ${sandboxDir}`, (err, stdout, stderr) => {
     if (err) {
+      console.error(`Error destroying environment: ${stderr}`);
       return res.status(500).json({ error: stderr });
     }
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import config from './config';
-import '../App.css';
+import './ScriptAccordion.css';
 
 const ScriptAccordion = ({ script, description, command, isOpen, onToggle }) => {
   const [isEnvironmentSetup, setIsEnvironmentSetup] = useState(false);
@@ -16,7 +16,7 @@ const ScriptAccordion = ({ script, description, command, isOpen, onToggle }) => 
         setError('');
       })
       .catch(err => {
-        const errorMsg = err.response && err.response.data ? err.response.data.error : 'Error setting up environment';
+        const errorMsg = err.response && err.response.data ? err.response.data.error : `Error setting up environment: ${err.message}`;
         setError(errorMsg);
       });
   };
@@ -28,7 +28,7 @@ const ScriptAccordion = ({ script, description, command, isOpen, onToggle }) => 
         setError('');
       })
       .catch(err => {
-        const errorMsg = err.response && err.response.data ? err.response.data.error : 'Error running script';
+        const errorMsg = err.response && err.response.data ? err.response.data.error : `Error running script: ${err.message}`;
         setError(errorMsg);
       });
   };
@@ -41,7 +41,7 @@ const ScriptAccordion = ({ script, description, command, isOpen, onToggle }) => 
         setError('');
       })
       .catch(err => {
-        const errorMsg = err.response && err.response.data ? err.response.data.error : 'Error destroying environment';
+        const errorMsg = err.response && err.response.data ? err.response.data.error : `Error destroying environment: ${err.message}`;
         setError(errorMsg);
       });
   };
