@@ -1,31 +1,10 @@
-/* App.css */
-body {
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.App {
-  text-align: center;
-  padding: 20px;
-}
-
-h1 {
-  color: #007acc;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-/* Including styles for the accordion and buttons from the previous implementation */
+/* ScriptAccordion.css */
 .script-accordion {
   margin: 10px 0;
   background: #1e1e1e;
   color: #cfcfcf;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
 }
 
 .script-header {
@@ -42,7 +21,6 @@ h1 {
 
 .script-header h3 {
   margin: 0;
-  font-size: 1.5em;
 }
 
 .script-content {
@@ -98,20 +76,10 @@ button.destroy-button:hover {
 
 pre {
   background: #1e1e1e;
-  color: #00ff00;
+  color: #cfcfcf;
   padding: 10px;
   border-radius: 4px;
   overflow: auto;
-  text-align: left;
-}
-
-.terminal-output {
-  background: #1e1e1e;
-  color: #00ff00;
-  padding: 10px;
-  border-radius: 4px;
-  overflow: auto;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .error-section {

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import config from './config';
 import '../App.css';
-import config from '../config';
 
 const ScriptAccordion = ({ script, description, command, isOpen, onToggle }) => {
   const [isEnvironmentSetup, setIsEnvironmentSetup] = useState(false);
@@ -70,7 +70,7 @@ const ScriptAccordion = ({ script, description, command, isOpen, onToggle }) => 
           )}
           <div className="output-section">
             <h4>Output</h4>
-            <pre>{output}</pre>
+            <pre className="terminal-output">{output}</pre>
             {error && (
               <div className="error-section">
                 <h4>Error</h4>

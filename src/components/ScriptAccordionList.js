@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ScriptAccordion from './ScriptAccordion';
+import config from './config';
 
 const scripts = {
   '1_find_system_groups.sh': {
@@ -178,22 +179,30 @@ const scripts = {
 
 const ScriptAccordionList = () => {
   const [openScript, setOpenScript] = useState(null);
+  const scriptRefs = useRef({});
 
   const handleToggle = (script) => {
     setOpenScript(openScript === script ? null : script);
   };
 
+  useEffect(() => {
+    if (openScript && scriptRefs.current[openScript]) {
+      scriptRefs.current[openScript].scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [openScript]);
+
   return (
     <div className="script-accordion-list">
       {Object.keys(scripts).map((script) => (
-        <ScriptAccordion
-          key={script}
-          script={script}
-          description={scripts[script].description}
-          command={scripts[script].command}
-          isOpen={openScript === script}
-          onToggle={() => handleToggle(script)}
-        />
+        <div key={script} ref={(el) => (scriptRefs.current[script] = el)}>
+          <ScriptAccordion
+            script={script}
+            description={scripts[script].description}
+            command={scripts[script].command}
+            isOpen={openScript === script}
+            onToggle={() => handleToggle(script)}
+          />
+        </div>
       ))}
     </div>
   );
