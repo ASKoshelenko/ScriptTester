@@ -1,0 +1,193 @@
+/styles/style-1/All.min.css?1719878484498: Scheme missing.
+URL transformed to HTTPS due to an HSTS policy
+--2024-07-02 10:47:02--  https://abc.xyz/
+Resolving abc.xyz (abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to abc.xyz (abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 71593 (70K) [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html’
+
+     0K .......... .......... .......... .......... .......... 71% 2.12M 0s
+    50K .......... .........                                  100% 3.27M=0.03s
+
+2024-07-02 10:47:02 (2.35 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html’ saved [71593/71593]
+
+--2024-07-02 10:47:02--  https://www.abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s180
+Resolving www.abc.xyz (www.abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to www.abc.xyz (www.abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s180 [following]
+--2024-07-02 10:47:02--  https://abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s180
+Resolving abc.xyz (abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to abc.xyz (abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8020 (7.8K) [image/jpeg]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/favicon-194x194.png=s180’
+
+     0K .......                                               100% 4.48M=0.002s
+
+2024-07-02 10:47:02 (4.48 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/favicon-194x194.png=s180’ saved [8020/8020]
+
+--2024-07-02 10:47:02--  https://www.abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s32
+Resolving www.abc.xyz (www.abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to www.abc.xyz (www.abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s32 [following]
+--2024-07-02 10:47:02--  https://abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s32
+Resolving abc.xyz (abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to abc.xyz (abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4205 (4.1K) [image/jpeg]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/favicon-194x194.png=s32’
+
+     0K ....                                                  100% 4.46M=0.001s
+
+2024-07-02 10:47:02 (4.46 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/favicon-194x194.png=s32’ saved [4205/4205]
+
+--2024-07-02 10:47:02--  https://www.abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s16
+Resolving www.abc.xyz (www.abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to www.abc.xyz (www.abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s16 [following]
+--2024-07-02 10:47:02--  https://abc.xyz/assets/d8/4f/fb18973f4082809d50604239e2ef/favicon-194x194.png=s16
+Resolving abc.xyz (abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to abc.xyz (abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3811 (3.7K) [image/jpeg]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/favicon-194x194.png=s16’
+
+     0K ...                                                   100% 4.07M=0.001s
+
+2024-07-02 10:47:02 (4.07 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/favicon-194x194.png=s16’ saved [3811/3811]
+
+http://#main: Invalid host name.
+URL transformed to HTTPS due to an HSTS policy
+--2024-07-02 10:47:02--  https://abc.xyz/investor
+Resolving abc.xyz (abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to abc.xyz (abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://abc.xyz/investor/ [following]
+--2024-07-02 10:47:03--  https://abc.xyz/investor/
+Reusing existing connection to abc.xyz:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 109616 (107K) [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/investor’
+
+     0K .......... .......... .......... .......... .......... 46% 2.24M 0s
+    50K .......... .......... .......... .......... .......... 93% 2.47M 0s
+   100K .......                                               100% 6.79M=0.04s
+
+2024-07-02 10:47:03 (2.46 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/investor’ saved [109616/109616]
+
+URL transformed to HTTPS due to an HSTS policy
+--2024-07-02 10:47:03--  https://abc.xyz/investor
+Resolving abc.xyz (abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to abc.xyz (abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://abc.xyz/investor/ [following]
+--2024-07-02 10:47:03--  https://abc.xyz/investor/
+Reusing existing connection to abc.xyz:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 109616 (107K) [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/investor.1’
+
+     0K .......... .......... .......... .......... .......... 46% 2.17M 0s
+    50K .......... .......... .......... .......... .......... 93% 2.95M 0s
+   100K .......                                               100% 5.14M=0.04s
+
+2024-07-02 10:47:03 (2.59 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/investor.1’ saved [109616/109616]
+
+--2024-07-02 10:47:03--  http://www.calicolabs.com/
+Resolving www.calicolabs.com (www.calicolabs.com)... 34.16.116.185
+Connecting to www.calicolabs.com (www.calicolabs.com)|34.16.116.185|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.calicolabs.com/ [following]
+--2024-07-02 10:47:03--  https://www.calicolabs.com/
+Connecting to www.calicolabs.com (www.calicolabs.com)|34.16.116.185|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 100547 (98K) [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html.1’
+
+     0K .......... .......... .......... .......... .......... 50%  363K 0s
+    50K .......... .......... .......... .......... ........  100%  363K=0.3s
+
+2024-07-02 10:47:04 (363 KB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html.1’ saved [100547/100547]
+
+URL transformed to HTTPS due to an HSTS policy
+--2024-07-02 10:47:04--  https://abc.xyz/investor
+Resolving abc.xyz (abc.xyz)... 142.250.203.142, 2a00:1450:401b:80e::200e
+Connecting to abc.xyz (abc.xyz)|142.250.203.142|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://abc.xyz/investor/ [following]
+--2024-07-02 10:47:04--  https://abc.xyz/investor/
+Reusing existing connection to abc.xyz:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 109616 (107K) [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/investor.2’
+
+     0K .......... .......... .......... .......... .......... 46% 2.23M 0s
+    50K .......... .......... .......... .......... .......... 93% 2.40M 0s
+   100K .......                                               100% 7.88M=0.04s
+
+2024-07-02 10:47:04 (2.42 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/investor.2’ saved [109616/109616]
+
+--2024-07-02 10:47:04--  https://policies.google.com/privacy
+Resolving policies.google.com (policies.google.com)... 216.58.208.206, 2a00:1450:401b:800::200e
+Connecting to policies.google.com (policies.google.com)|216.58.208.206|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/privacy’
+
+     0K .......... .......... .......... .......... .......... 1.95M
+    50K .......... .......... .......... .......... .......... 3.58M
+   100K .......... .......... .......... .......... .......... 6.59M
+   150K .......... .......... .......... .......... .......... 7.61M
+   200K .......... .......... .......... .......... .......... 10.4M
+   250K .......... .......... .......... .......               10.5M=0.06s
+
+2024-07-02 10:47:05 (4.63 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/privacy’ saved [294255]
+
+--2024-07-02 10:47:05--  https://policies.google.com/terms
+Resolving policies.google.com (policies.google.com)... 216.58.208.206, 2a00:1450:401b:800::200e
+Connecting to policies.google.com (policies.google.com)|216.58.208.206|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/terms’
+
+     0K .......... .......... .......... .......... .......... 1.96M
+    50K .......... .......... .......... .......... .......... 3.54M
+   100K .......... .......... .......... .......... .......... 6.04M
+   150K .......... .......... .......... .......... .......... 8.35M
+   200K .......... .......... .......... .......... .....      9.03M=0.06s
+
+2024-07-02 10:47:05 (4.16 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/terms’ saved [251312]
+
+--2024-07-02 10:47:05--  https://about.google/
+Resolving about.google (about.google)... 216.239.32.29
+Connecting to about.google (about.google)|216.239.32.29|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 104859 (102K) [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html.2’
+
+     0K .......... .......... .......... .......... .......... 48% 1.71M 0s
+    50K .......... .......... .......... .......... .......... 97% 3.19M 0s
+   100K ..                                                    100% 8.99M=0.04s
+
+2024-07-02 10:47:05 (2.27 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html.2’ saved [104859/104859]
+
+--2024-07-02 10:47:05--  https://about.google/products/
+Resolving about.google (about.google)... 216.239.32.29
+Connecting to about.google (about.google)|216.239.32.29|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 262528 (256K) [text/html]
+Saving to: ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html.3’
+
+     0K .......... .......... .......... .......... .......... 19%  681K 0s
+    50K .......... .......... .......... .......... .......... 39% 18.4M 0s
+   100K .......... .......... .......... .......... .......... 58% 1.86M 0s
+   150K .......... .......... .......... .......... .......... 78% 2.37M 0s
+   200K .......... .......... .......... .......... .......... 97% 5.95M 0s
+   250K ......                                                100% 12.7M=0.1s
+
+2024-07-02 10:47:05 (1.90 MB/s) - ‘/home/ask/ubuntu-scripts-tester/sandbox/downloads/index.html.3’ saved [262528/262528]
+

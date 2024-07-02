@@ -153,7 +153,7 @@ const scripts = {
   },
   '38_find_active_hosts.sh': {
     description: 'Find all active hosts in the specified network range.',
-    command: 'nmap -sn 192.168.56.0/24 && nmap -sn -iL /home/ask/ubuntu-scripts-tester/sandbox/test_dir/hosts.txt && printf "192.168.1.%d\\n" {1..254} | xargs -I{} ping -c1 {} > /dev/null; ip -4 n | grep REACHABLE | cut -d \' \' -f1 && cat /home/ask/ubuntu-scripts-tester/sandbox/test_dir/hosts.txt | xargs -I{} ping -c1 {} > /dev/null; ip -4 n | grep REACHABLE | cut -d \' \' -f1 && echo "Task completed"'
+    command: 'nmap -sn 192.168.194.0/24 && nmap -sn -iL /home/ask/ubuntu-scripts-tester/sandbox/test_dir/hosts.txt && printf "192.168.1.%d\\n" {1..254} | xargs -I{} ping -c1 {} > /dev/null; ip -4 n | grep REACHABLE | cut -d \' \' -f1 && cat /home/ask/ubuntu-scripts-tester/sandbox/test_dir/hosts.txt | xargs -I{} ping -c1 {} > /dev/null; ip -4 n | grep REACHABLE | cut -d \' \' -f1 && echo "Task completed"'
   },
   '39_get_raised_interfaces_ips.sh': {
     description: 'Get the IP addresses of all active (raised) network interfaces.',
