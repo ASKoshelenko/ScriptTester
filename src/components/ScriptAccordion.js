@@ -53,7 +53,7 @@ const ScriptAccordion = ({ script, description, command, isOpen, onToggle }) => 
       </div>
       {isOpen && (
         <div className="script-content">
-          <p>{description}</p>
+          <p><strong>Script:</strong> {script}</p>
           <div className="command-section">
             <strong>Command:</strong> {command}
           </div>
