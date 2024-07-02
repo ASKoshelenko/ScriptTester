@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ScriptAccordion from './ScriptAccordion';
-import './ScriptAccordion.css';
+import './ScriptAccordion.css'; // Ensure you have the correct path for your CSS file
 
 const scripts = {
   '1_find_system_groups.sh': {
@@ -153,8 +153,8 @@ const scripts = {
   },
   '38_find_active_hosts.sh': {
     description: 'Find all active hosts in the specified network range.',
-    command: 'nmap -sn 192.168.194.0/24 && nmap -sn -iL /home/ask/ubuntu-scripts-tester/sandbox/test_dir/hosts.txt && printf "192.168.1.%d\\n" {1..254} | xargs -I{} ping -c1 {} > /dev/null; ip -4 n | grep REACHABLE | cut -d \' \' -f1 && cat /home/ask/ubuntu-scripts-tester/sandbox/test_dir/hosts.txt | xargs -I{} ping -c1 {} > /dev/null; ip -4 n | grep REACHABLE | cut -d \' \' -f1 && echo "Task completed"'
-  },
+    command: 'printf "192.168.194.%d\\n" {1..254} | xargs -I{} ping -c1 {} > /dev/null; cat /home/ask/ubuntu-scripts-tester/sandbox/test_dir/hosts.txt | xargs -I{} ping -c1 {} > /dev/null; ip -4 n | grep REACHABLE | cut -d \' \' -f1 | sort -u && echo "Task completed"'
+  },  
   '39_get_raised_interfaces_ips.sh': {
     description: 'Get the IP addresses of all active (raised) network interfaces.',
     command: 'ip a | grep \'state UP\' | cut -d \' \' -f2 | xargs -n1 ip a show | grep inet | cut -d \' \' -f5,6 && sudo grep -P \'\\b(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\b\' /etc/netplan/*.yaml | xargs && echo "Task completed"'

@@ -1,0 +1,137 @@
+2024-07-02 15:08:16 error: Error running script 34_stop_long_running_processes.sh: systemd: no process found
+kthreadd: no process found
+rcu_gp: no process found
+rcu_par_gp: no process found
+slub_flushwq: no process found
+netns: no process found
+kworker/0:0H-events_highpri: No such file or directory
+mm_percpu_wq: no process found
+rcu_tasks_rude_: no process found
+rcu_tasks_trace: no process found
+ksoftirqd/0: No such file or directory
+rcu_sched: no process found
+migration/0: No such file or directory
+idle_inject/0: No such file or directory
+cpuhp/0: No such file or directory
+kdevtmpfs: no process found
+inet_frag_wq: no process found
+kauditd: no process found
+khungtaskd: no process found
+oom_reaper: no process found
+writeback: no process found
+kcompactd0: no process found
+ksmd: no process found
+khugepaged: no process found
+kintegrityd: no process found
+kblockd: no process found
+blkcg_punt_bio: no process found
+tpm_dev_wq: no process found
+ata_sff: no process found
+md: no process found
+edac-poller: no process found
+devfreq_wq: no process found
+watchdogd: no process found
+kworker/0:1H-kblockd: No such file or directory
+kswapd0: no process found
+ecryptfs-kthrea: no process found
+kthrotld: no process found
+acpi_thermal_pm: no process found
+scsi_eh_0: no process found
+scsi_tmf_0: no process found
+scsi_eh_1: no process found
+scsi_tmf_1: no process found
+vfio-irqfd-clea: no process found
+mld: no process found
+ipv6_addrconf: no process found
+kstrp: no process found
+zswap-shrink: no process found
+kworker/u3:0: No such file or directory
+charger_manager: no process found
+scsi_eh_2: no process found
+scsi_tmf_2: no process found
+cryptd: no process found
+kdmflush: no process found
+raid5wq: no process found
+jbd2/dm-0-8: No such file or directory
+ext4-rsv-conver: no process found
+systemd-journal: no process found
+kaluad: no process found
+kmpath_rdacd: no process found
+kmpathd: no process found
+kmpath_handlerd: no process found
+multipathd: no process found
+systemd-udevd: no process found
+jbd2/sda2-8: No such file or directory
+ext4-rsv-conver: no process found
+kworker/0:3-cgroup_destroy: No such file or directory
+systemd-timesyn: no process found
+systemd-network: no process found
+systemd-resolve: no process found
+cron: no process found
+dbus-daemon: no process found
+networkd-dispat: no process found
+polkitd: no process found
+rsyslogd: no process found
+snapd: no process found
+systemd-logind: no process found
+udisksd: no process found
+agetty: no process found
+ModemManager: no process found
+unattended-upgr: no process found
+mysqld: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+systemd: no process found
+(sd-pam): no process found
+sh: no process found
+node: no process found
+node: no process found
+node: no process found
+bash: no process found
+bash: no process found
+dbus-daemon: no process found
+bash: no process found
+npm: no process found
+start: no process found
+sh: no process found
+node: no process found
+node: no process found
+upowerd: no process found
+sshd: no process found
+packagekitd: no process found
+node: no process found
+node: no process found
+node: no process found
+node: no process found
+node: no process found
+node: no process found
+npm: no process found
+run: no process found
+dev: no process found
+sh: no process found
+node: no process found
+bash: no process found
+node: no process found
+node: no process found
+node: no process found
+kworker/u2:0-events_unbound: No such file or directory
+kworker/u2:1-events_power_efficient: No such file or directory
+kworker/0:0-events: No such file or directory
+sshd: no process found
+sshd: no process found
+bash: no process found
+bash: no process found
+kworker/u2:2-events_unbound: No such file or directory
+kworker/u2:3-events_unbound: No such file or directory
+sh: no process found
+cpuUsage.sh: no process found
+sleep: no process found
+sh: no process found
+ps: no process found
+xargs: no process found
+

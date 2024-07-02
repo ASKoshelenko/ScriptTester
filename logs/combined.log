@@ -1,0 +1,925 @@
+2024-07-02 13:53:25 info: Server running on port 5001
+2024-07-02 13:53:51 info: Environment setup for 1_find_system_groups.sh completed: Created sandbox directory and test_passwd file
+Sandbox setup for testing 1_find_system_groups.sh completed
+
+2024-07-02 13:53:52 info: Script 1_find_system_groups.sh executed successfully: root:0
+daemon:1
+bin:2
+sys:3
+adm:4
+tty:5
+disk:6
+lp:7
+mail:8
+news:9
+uucp:10
+man:12
+proxy:13
+kmem:15
+dialout:20
+fax:21
+voice:22
+cdrom:24
+floppy:25
+tape:26
+sudo:27
+audio:29
+dip:30
+www-data:33
+backup:34
+operator:37
+list:38
+irc:39
+src:40
+gnats:41
+shadow:42
+utmp:43
+video:44
+sasl:45
+plugdev:46
+staff:50
+games:60
+users:100
+systemd-journal:101
+systemd-network:102
+systemd-resolve:103
+messagebus:104
+systemd-timesync:105
+input:106
+sgx:107
+kvm:108
+render:109
+lxd:110
+_ssh:111
+crontab:112
+syslog:113
+uuidd:114
+tcpdump:115
+tss:116
+landscape:117
+fwupd-refresh:118
+mysql:119
+ssl-cert:120
+postgres:121
+mongodb:122
+Task completed
+
+2024-07-02 13:53:53 info: Environment destroyed for 1_find_system_groups.sh: 
+2024-07-02 13:54:43 info: Server running on port 5001
+2024-07-02 13:54:44 info: Server running on port 5001
+2024-07-02 14:09:54 info: Server running on port 5001
+2024-07-02 14:11:38 info: Environment setup for 2_find_files_with_access_rights.sh completed: Created test_dir with files and subdirectories, set permissions
+Sandbox setup for testing 2_find_files_with_access_rights.sh completed
+
+2024-07-02 14:11:40 info: Environment destroyed for 2_find_files_with_access_rights.sh: 
+2024-07-02 14:11:41 info: Environment setup for 2_find_files_with_access_rights.sh completed: Created test_dir with files and subdirectories, set permissions
+Sandbox setup for testing 2_find_files_with_access_rights.sh completed
+
+2024-07-02 14:11:41 info: Script 2_find_files_with_access_rights.sh executed successfully: ./scripts/temp
+./node_modules/is-glob
+./node_modules/readdirp
+./node_modules/cors
+./node_modules/cors/lib
+./node_modules/binary-extensions
+./node_modules/semver
+./node_modules/semver/bin
+./node_modules/semver/bin/semver
+./node_modules/nodemon
+./node_modules/nodemon/lib
+./node_modules/nodemon/lib/config
+./node_modules/nodemon/lib/rules
+./node_modules/nodemon/lib/monitor
+./node_modules/nodemon/lib/help
+./node_modules/nodemon/lib/cli
+./node_modules/nodemon/lib/utils
+./node_modules/nodemon/doc
+./node_modules/nodemon/doc/cli
+./node_modules/nodemon/node_modules
+./node_modules/nodemon/node_modules/ms
+./node_modules/nodemon/node_modules/debug
+./node_modules/nodemon/node_modules/debug/src
+./node_modules/nodemon/bin
+./node_modules/nodemon/bin/nodemon.js
+./node_modules/balanced-match
+./node_modules/balanced-match/.github
+./node_modules/simple-update-notifier
+./node_modules/simple-update-notifier/node_modules
+./node_modules/simple-update-notifier/node_modules/semver
+./node_modules/simple-update-notifier/node_modules/semver/classes
+./node_modules/simple-update-notifier/node_modules/semver/ranges
+./node_modules/simple-update-notifier/node_modules/semver/bin
+./node_modules/simple-update-notifier/node_modules/semver/bin/semver.js
+./node_modules/simple-update-notifier/node_modules/semver/functions
+./node_modules/simple-update-notifier/node_modules/semver/internal
+./node_modules/simple-update-notifier/node_modules/.bin
+./node_modules/simple-update-notifier/node_modules/.bin/semver
+./node_modules/simple-update-notifier/build
+./node_modules/simple-update-notifier/src
+./node_modules/anymatch
+./node_modules/object-assign
+./node_modules/supports-color
+./node_modules/is-number
+./node_modules/has-flag
+./node_modules/pstree.remy
+./node_modules/pstree.remy/lib
+./node_modules/pstree.remy/tests
+./node_modules/pstree.remy/tests/fixtures
+./node_modules/normalize-path
+./node_modules/concat-map
+./node_modules/concat-map/example
+./node_modules/concat-map/test
+./node_modules/brace-expansion
+./node_modules/chokidar
+./node_modules/chokidar/lib
+./node_modules/chokidar/types
+./node_modules/fill-range
+./node_modules/touch
+./node_modules/touch/bin
+./node_modules/touch/bin/nodetouch.js
+./node_modules/to-regex-range
+./node_modules/picomatch
+./node_modules/picomatch/lib
+./node_modules/minimatch
+./node_modules/glob-parent
+./node_modules/undefsafe
+./node_modules/undefsafe/.github
+./node_modules/undefsafe/.github/workflows
+./node_modules/undefsafe/lib
+./node_modules/ignore-by-default
+./node_modules/braces
+./node_modules/braces/lib
+./node_modules/is-extglob
+./node_modules/.bin/mime
+./node_modules/.bin/semver
+./node_modules/.bin/nodemon
+./node_modules/.bin/nodetouch
+./node_modules/is-binary-path
+./utils
+./sym_dir
+Task completed
+
+2024-07-02 14:11:42 info: Environment destroyed for 2_find_files_with_access_rights.sh: 
+2024-07-02 14:29:28 info: Environment setup for 40_get_subdomains_from_ssl.sh completed: Sandbox setup is not required for testing 40_get_subdomains_from_ssl.sh
+
+2024-07-02 14:30:52 info: Environment setup for 1_find_system_groups.sh completed: Created sandbox directory and test_passwd file
+Sandbox setup for testing 1_find_system_groups.sh completed
+
+2024-07-02 14:30:53 info: Script 1_find_system_groups.sh executed successfully: root:0
+daemon:1
+bin:2
+sys:3
+adm:4
+tty:5
+disk:6
+lp:7
+mail:8
+news:9
+uucp:10
+man:12
+proxy:13
+kmem:15
+dialout:20
+fax:21
+voice:22
+cdrom:24
+floppy:25
+tape:26
+sudo:27
+audio:29
+dip:30
+www-data:33
+backup:34
+operator:37
+list:38
+irc:39
+src:40
+gnats:41
+shadow:42
+utmp:43
+video:44
+sasl:45
+plugdev:46
+staff:50
+games:60
+users:100
+systemd-journal:101
+systemd-network:102
+systemd-resolve:103
+messagebus:104
+systemd-timesync:105
+input:106
+sgx:107
+kvm:108
+render:109
+lxd:110
+_ssh:111
+crontab:112
+syslog:113
+uuidd:114
+tcpdump:115
+tss:116
+landscape:117
+fwupd-refresh:118
+mysql:119
+ssl-cert:120
+postgres:121
+mongodb:122
+Task completed
+
+2024-07-02 14:30:56 info: Environment destroyed for 1_find_system_groups.sh: 
+2024-07-02 14:39:53 info: Environment setup for 2_find_files_with_access_rights.sh completed: Created test_dir with files and subdirectories, set permissions
+Sandbox setup for testing 2_find_files_with_access_rights.sh completed
+
+2024-07-02 14:41:00 info: Environment setup for 4_search_scripts_by_user.sh completed: Created test_dir with executable script1.sh
+Sandbox setup for testing 4_search_scripts_by_user.sh completed
+
+2024-07-02 14:41:01 info: Script 4_search_scripts_by_user.sh executed successfully: ./scripts/bash_scripts/21_copy_with_attributes.sh
+./scripts/bash_scripts/40_get_subdomains_from_ssl.sh
+./scripts/bash_scripts/7_find_symbolic_links.sh
+./scripts/bash_scripts/24_find_and_delete_broken_links.sh
+./scripts/bash_scripts/38_find_active_hosts.sh
+./scripts/bash_scripts/5_recursive_search_words.sh
+./scripts/bash_scripts/20_copy_directory_with_symlinks.sh
+./scripts/bash_scripts/25_unpack_archive.sh
+./scripts/bash_scripts/16_list_active_network_connections.sh
+./scripts/bash_scripts/26_pack_directory_with_attributes.sh
+./scripts/bash_scripts/28_list_users_alphabetically.sh
+./scripts/bash_scripts/11_delete_file_with_links.sh
+./scripts/bash_scripts/27_copy_directory_structure.sh
+./scripts/bash_scripts/35_delete_orphaned_jpeg_files.sh
+./scripts/bash_scripts/1_find_system_groups.sh
+./scripts/bash_scripts/15_list_authorized_users.sh
+./scripts/bash_scripts/22_convert_relative_to_direct_links.sh
+./scripts/bash_scripts/32_list_users_with_or_without_terminal.sh
+./scripts/bash_scripts/33_download_all_links_from_page.sh
+./scripts/bash_scripts/3_find_all_scripts.sh
+./scripts/bash_scripts/8_find_hard_links.sh
+./scripts/bash_scripts/4_search_scripts_by_user.sh
+./scripts/bash_scripts/19_copy_directory_with_links.sh
+./scripts/bash_scripts/2_find_files_with_access_rights.sh
+./scripts/bash_scripts/31_list_users_without_authorization_rights.sh
+./scripts/bash_scripts/9_find_names_by_inode.sh
+./scripts/bash_scripts/12_recursive_change_permissions.sh
+./scripts/bash_scripts/41_extract_path_name_extension.sh
+./scripts/bash_scripts/42_delete_files_by_size_and_pattern.sh
+./scripts/bash_scripts/29_list_system_users_sorted_by_id.sh
+./scripts/bash_scripts/37_get_all_ip_addresses_from_file.sh
+./scripts/bash_scripts/17_reassign_symbolic_link.sh
+./scripts/bash_scripts/6_find_duplicate_files.sh
+./scripts/bash_scripts/43_create_files_with_identifiers.sh
+./scripts/bash_scripts/36_find_ip_address.sh
+./scripts/bash_scripts/34_stop_long_running_processes.sh
+./scripts/bash_scripts/39_get_raised_interfaces_ips.sh
+./scripts/bash_scripts/13_compare_directories.sh
+./scripts/bash_scripts/18_create_symbolic_links.sh
+./scripts/bash_scripts/10_find_names_by_inode_multiple_partitions.sh
+./scripts/bash_scripts/23_convert_direct_to_relative_links.sh
+./scripts/bash_scripts/30_list_users_sorted_by_reverse_id.sh
+./scripts/bash_scripts/14_get_mac_addresses.sh
+./node_modules/mime/cli.js
+./node_modules/mime/src/build.js
+./node_modules/semver/bin/semver
+./node_modules/nodemon/bin/nodemon.js
+./node_modules/simple-update-notifier/node_modules/semver/bin/semver.js
+./node_modules/touch/bin/nodetouch.js
+Task completed
+
+2024-07-02 14:41:05 info: Environment destroyed for 4_search_scripts_by_user.sh: 
+2024-07-02 14:42:56 info: Environment setup for 1_find_system_groups.sh completed: Created sandbox directory and test_passwd file
+Sandbox setup for testing 1_find_system_groups.sh completed
+
+2024-07-02 14:42:57 info: Script 1_find_system_groups.sh executed successfully: root:0
+daemon:1
+bin:2
+sys:3
+adm:4
+tty:5
+disk:6
+lp:7
+mail:8
+news:9
+uucp:10
+man:12
+proxy:13
+kmem:15
+dialout:20
+fax:21
+voice:22
+cdrom:24
+floppy:25
+tape:26
+sudo:27
+audio:29
+dip:30
+www-data:33
+backup:34
+operator:37
+list:38
+irc:39
+src:40
+gnats:41
+shadow:42
+utmp:43
+video:44
+sasl:45
+plugdev:46
+staff:50
+games:60
+users:100
+systemd-journal:101
+systemd-network:102
+systemd-resolve:103
+messagebus:104
+systemd-timesync:105
+input:106
+sgx:107
+kvm:108
+render:109
+lxd:110
+_ssh:111
+crontab:112
+syslog:113
+uuidd:114
+tcpdump:115
+tss:116
+landscape:117
+fwupd-refresh:118
+mysql:119
+ssl-cert:120
+postgres:121
+mongodb:122
+Task completed
+
+2024-07-02 14:43:02 info: Environment destroyed for 1_find_system_groups.sh: 
+2024-07-02 15:05:39 info: Environment setup for 1_find_system_groups.sh completed: Created sandbox directory and test_passwd file
+Sandbox setup for testing 1_find_system_groups.sh completed
+
+2024-07-02 15:05:46 info: Script 1_find_system_groups.sh executed successfully: root:0
+daemon:1
+bin:2
+sys:3
+adm:4
+tty:5
+disk:6
+lp:7
+mail:8
+news:9
+uucp:10
+man:12
+proxy:13
+kmem:15
+dialout:20
+fax:21
+voice:22
+cdrom:24
+floppy:25
+tape:26
+sudo:27
+audio:29
+dip:30
+www-data:33
+backup:34
+operator:37
+list:38
+irc:39
+src:40
+gnats:41
+shadow:42
+utmp:43
+video:44
+sasl:45
+plugdev:46
+staff:50
+games:60
+users:100
+systemd-journal:101
+systemd-network:102
+systemd-resolve:103
+messagebus:104
+systemd-timesync:105
+input:106
+sgx:107
+kvm:108
+render:109
+lxd:110
+_ssh:111
+crontab:112
+syslog:113
+uuidd:114
+tcpdump:115
+tss:116
+landscape:117
+fwupd-refresh:118
+mysql:119
+ssl-cert:120
+postgres:121
+mongodb:122
+Task completed
+
+2024-07-02 15:05:55 info: Environment setup for 2_find_files_with_access_rights.sh completed: Created test_dir with files and subdirectories, set permissions
+Sandbox setup for testing 2_find_files_with_access_rights.sh completed
+
+2024-07-02 15:05:56 info: Script 2_find_files_with_access_rights.sh executed successfully: ./scripts/bash_scripts
+./node_modules/is-glob
+./node_modules/readdirp
+./node_modules/cors
+./node_modules/cors/lib
+./node_modules/binary-extensions
+./node_modules/semver
+./node_modules/semver/bin
+./node_modules/semver/bin/semver
+./node_modules/nodemon
+./node_modules/nodemon/lib
+./node_modules/nodemon/lib/config
+./node_modules/nodemon/lib/rules
+./node_modules/nodemon/lib/monitor
+./node_modules/nodemon/lib/help
+./node_modules/nodemon/lib/cli
+./node_modules/nodemon/lib/utils
+./node_modules/nodemon/doc
+./node_modules/nodemon/doc/cli
+./node_modules/nodemon/node_modules
+./node_modules/nodemon/node_modules/ms
+./node_modules/nodemon/node_modules/debug
+./node_modules/nodemon/node_modules/debug/src
+./node_modules/nodemon/bin
+./node_modules/nodemon/bin/nodemon.js
+./node_modules/balanced-match
+./node_modules/balanced-match/.github
+./node_modules/simple-update-notifier
+./node_modules/simple-update-notifier/node_modules
+./node_modules/simple-update-notifier/node_modules/semver
+./node_modules/simple-update-notifier/node_modules/semver/classes
+./node_modules/simple-update-notifier/node_modules/semver/ranges
+./node_modules/simple-update-notifier/node_modules/semver/bin
+./node_modules/simple-update-notifier/node_modules/semver/bin/semver.js
+./node_modules/simple-update-notifier/node_modules/semver/functions
+./node_modules/simple-update-notifier/node_modules/semver/internal
+./node_modules/simple-update-notifier/node_modules/.bin
+./node_modules/simple-update-notifier/node_modules/.bin/semver
+./node_modules/simple-update-notifier/build
+./node_modules/simple-update-notifier/src
+./node_modules/anymatch
+./node_modules/object-assign
+./node_modules/supports-color
+./node_modules/is-number
+./node_modules/has-flag
+./node_modules/pstree.remy
+./node_modules/pstree.remy/lib
+./node_modules/pstree.remy/tests
+./node_modules/pstree.remy/tests/fixtures
+./node_modules/normalize-path
+./node_modules/concat-map
+./node_modules/concat-map/example
+./node_modules/concat-map/test
+./node_modules/brace-expansion
+./node_modules/chokidar
+./node_modules/chokidar/lib
+./node_modules/chokidar/types
+./node_modules/fill-range
+./node_modules/touch
+./node_modules/touch/bin
+./node_modules/touch/bin/nodetouch.js
+./node_modules/to-regex-range
+./node_modules/picomatch
+./node_modules/picomatch/lib
+./node_modules/minimatch
+./node_modules/glob-parent
+./node_modules/undefsafe
+./node_modules/undefsafe/.github
+./node_modules/undefsafe/.github/workflows
+./node_modules/undefsafe/lib
+./node_modules/ignore-by-default
+./node_modules/braces
+./node_modules/braces/lib
+./node_modules/is-extglob
+./node_modules/.bin/mime
+./node_modules/.bin/semver
+./node_modules/.bin/nodemon
+./node_modules/.bin/nodetouch
+./node_modules/is-binary-path
+./utils
+Task completed
+
+2024-07-02 15:06:00 info: Environment setup for 3_find_all_scripts.sh completed: Created test_dir with script1.sh
+Sandbox setup for testing 3_find_all_scripts.sh completed
+
+2024-07-02 15:06:03 info: Script 3_find_all_scripts.sh executed successfully: ./scripts/bash_scripts/21_copy_with_attributes.sh
+./scripts/bash_scripts/40_get_subdomains_from_ssl.sh
+./scripts/bash_scripts/7_find_symbolic_links.sh
+./scripts/bash_scripts/24_find_and_delete_broken_links.sh
+./scripts/bash_scripts/38_find_active_hosts.sh
+./scripts/bash_scripts/5_recursive_search_words.sh
+./scripts/bash_scripts/20_copy_directory_with_symlinks.sh
+./scripts/bash_scripts/25_unpack_archive.sh
+./scripts/bash_scripts/16_list_active_network_connections.sh
+./scripts/bash_scripts/26_pack_directory_with_attributes.sh
+./scripts/bash_scripts/28_list_users_alphabetically.sh
+./scripts/bash_scripts/11_delete_file_with_links.sh
+./scripts/bash_scripts/27_copy_directory_structure.sh
+./scripts/bash_scripts/35_delete_orphaned_jpeg_files.sh
+./scripts/bash_scripts/1_find_system_groups.sh
+./scripts/bash_scripts/15_list_authorized_users.sh
+./scripts/bash_scripts/22_convert_relative_to_direct_links.sh
+./scripts/bash_scripts/32_list_users_with_or_without_terminal.sh
+./scripts/bash_scripts/33_download_all_links_from_page.sh
+./scripts/bash_scripts/3_find_all_scripts.sh
+./scripts/bash_scripts/8_find_hard_links.sh
+./scripts/bash_scripts/4_search_scripts_by_user.sh
+./scripts/bash_scripts/19_copy_directory_with_links.sh
+./scripts/bash_scripts/2_find_files_with_access_rights.sh
+./scripts/bash_scripts/31_list_users_without_authorization_rights.sh
+./scripts/bash_scripts/9_find_names_by_inode.sh
+./scripts/bash_scripts/12_recursive_change_permissions.sh
+./scripts/bash_scripts/41_extract_path_name_extension.sh
+./scripts/bash_scripts/42_delete_files_by_size_and_pattern.sh
+./scripts/bash_scripts/29_list_system_users_sorted_by_id.sh
+./scripts/bash_scripts/37_get_all_ip_addresses_from_file.sh
+./scripts/bash_scripts/17_reassign_symbolic_link.sh
+./scripts/bash_scripts/6_find_duplicate_files.sh
+./scripts/bash_scripts/43_create_files_with_identifiers.sh
+./scripts/bash_scripts/36_find_ip_address.sh
+./scripts/bash_scripts/34_stop_long_running_processes.sh
+./scripts/bash_scripts/39_get_raised_interfaces_ips.sh
+./scripts/bash_scripts/13_compare_directories.sh
+./scripts/bash_scripts/18_create_symbolic_links.sh
+./scripts/bash_scripts/10_find_names_by_inode_multiple_partitions.sh
+./scripts/bash_scripts/23_convert_direct_to_relative_links.sh
+./scripts/bash_scripts/30_list_users_sorted_by_reverse_id.sh
+./scripts/bash_scripts/14_get_mac_addresses.sh
+./node_modules/mime/cli.js
+./node_modules/mime/src/build.js
+./node_modules/semver/bin/semver
+./node_modules/nodemon/bin/nodemon.js
+./node_modules/simple-update-notifier/node_modules/semver/bin/semver.js
+./node_modules/touch/bin/nodetouch.js
+Task completed
+
+2024-07-02 15:06:14 info: Environment setup for 4_search_scripts_by_user.sh completed: Created test_dir with executable script1.sh
+Sandbox setup for testing 4_search_scripts_by_user.sh completed
+
+2024-07-02 15:06:20 info: Script 4_search_scripts_by_user.sh executed successfully: ./scripts/bash_scripts/21_copy_with_attributes.sh
+./scripts/bash_scripts/40_get_subdomains_from_ssl.sh
+./scripts/bash_scripts/7_find_symbolic_links.sh
+./scripts/bash_scripts/24_find_and_delete_broken_links.sh
+./scripts/bash_scripts/38_find_active_hosts.sh
+./scripts/bash_scripts/5_recursive_search_words.sh
+./scripts/bash_scripts/20_copy_directory_with_symlinks.sh
+./scripts/bash_scripts/25_unpack_archive.sh
+./scripts/bash_scripts/16_list_active_network_connections.sh
+./scripts/bash_scripts/26_pack_directory_with_attributes.sh
+./scripts/bash_scripts/28_list_users_alphabetically.sh
+./scripts/bash_scripts/11_delete_file_with_links.sh
+./scripts/bash_scripts/27_copy_directory_structure.sh
+./scripts/bash_scripts/35_delete_orphaned_jpeg_files.sh
+./scripts/bash_scripts/1_find_system_groups.sh
+./scripts/bash_scripts/15_list_authorized_users.sh
+./scripts/bash_scripts/22_convert_relative_to_direct_links.sh
+./scripts/bash_scripts/32_list_users_with_or_without_terminal.sh
+./scripts/bash_scripts/33_download_all_links_from_page.sh
+./scripts/bash_scripts/3_find_all_scripts.sh
+./scripts/bash_scripts/8_find_hard_links.sh
+./scripts/bash_scripts/4_search_scripts_by_user.sh
+./scripts/bash_scripts/19_copy_directory_with_links.sh
+./scripts/bash_scripts/2_find_files_with_access_rights.sh
+./scripts/bash_scripts/31_list_users_without_authorization_rights.sh
+./scripts/bash_scripts/9_find_names_by_inode.sh
+./scripts/bash_scripts/12_recursive_change_permissions.sh
+./scripts/bash_scripts/41_extract_path_name_extension.sh
+./scripts/bash_scripts/42_delete_files_by_size_and_pattern.sh
+./scripts/bash_scripts/29_list_system_users_sorted_by_id.sh
+./scripts/bash_scripts/37_get_all_ip_addresses_from_file.sh
+./scripts/bash_scripts/17_reassign_symbolic_link.sh
+./scripts/bash_scripts/6_find_duplicate_files.sh
+./scripts/bash_scripts/43_create_files_with_identifiers.sh
+./scripts/bash_scripts/36_find_ip_address.sh
+./scripts/bash_scripts/34_stop_long_running_processes.sh
+./scripts/bash_scripts/39_get_raised_interfaces_ips.sh
+./scripts/bash_scripts/13_compare_directories.sh
+./scripts/bash_scripts/18_create_symbolic_links.sh
+./scripts/bash_scripts/10_find_names_by_inode_multiple_partitions.sh
+./scripts/bash_scripts/23_convert_direct_to_relative_links.sh
+./scripts/bash_scripts/30_list_users_sorted_by_reverse_id.sh
+./scripts/bash_scripts/14_get_mac_addresses.sh
+./node_modules/mime/cli.js
+./node_modules/mime/src/build.js
+./node_modules/semver/bin/semver
+./node_modules/nodemon/bin/nodemon.js
+./node_modules/simple-update-notifier/node_modules/semver/bin/semver.js
+./node_modules/touch/bin/nodetouch.js
+Task completed
+
+2024-07-02 15:06:24 info: Environment destroyed for 4_search_scripts_by_user.sh: 
+2024-07-02 15:07:08 info: Environment setup for 6_find_duplicate_files.sh completed: Created test_dir with duplicate files file1.txt and file2.txt
+Sandbox setup for testing 6_find_duplicate_files.sh completed
+
+2024-07-02 15:07:32 info: Environment destroyed for 6_find_duplicate_files.sh: 
+2024-07-02 15:07:34 info: Environment setup for 7_find_symbolic_links.sh completed: Created test_dir with symbolic link link1
+Sandbox setup for testing 7_find_symbolic_links.sh completed
+
+2024-07-02 15:07:44 info: Environment setup for 8_find_hard_links.sh completed: Created test_dir with hard link hardlink1
+Sandbox setup for testing 8_find_hard_links.sh completed
+
+2024-07-02 15:08:14 info: Environment setup for 34_stop_long_running_processes.sh completed: Sandbox setup is not required for testing 34_stop_long_running_processes.sh
+
+2024-07-02 15:08:16 error: Error running script 34_stop_long_running_processes.sh: systemd: no process found
+kthreadd: no process found
+rcu_gp: no process found
+rcu_par_gp: no process found
+slub_flushwq: no process found
+netns: no process found
+kworker/0:0H-events_highpri: No such file or directory
+mm_percpu_wq: no process found
+rcu_tasks_rude_: no process found
+rcu_tasks_trace: no process found
+ksoftirqd/0: No such file or directory
+rcu_sched: no process found
+migration/0: No such file or directory
+idle_inject/0: No such file or directory
+cpuhp/0: No such file or directory
+kdevtmpfs: no process found
+inet_frag_wq: no process found
+kauditd: no process found
+khungtaskd: no process found
+oom_reaper: no process found
+writeback: no process found
+kcompactd0: no process found
+ksmd: no process found
+khugepaged: no process found
+kintegrityd: no process found
+kblockd: no process found
+blkcg_punt_bio: no process found
+tpm_dev_wq: no process found
+ata_sff: no process found
+md: no process found
+edac-poller: no process found
+devfreq_wq: no process found
+watchdogd: no process found
+kworker/0:1H-kblockd: No such file or directory
+kswapd0: no process found
+ecryptfs-kthrea: no process found
+kthrotld: no process found
+acpi_thermal_pm: no process found
+scsi_eh_0: no process found
+scsi_tmf_0: no process found
+scsi_eh_1: no process found
+scsi_tmf_1: no process found
+vfio-irqfd-clea: no process found
+mld: no process found
+ipv6_addrconf: no process found
+kstrp: no process found
+zswap-shrink: no process found
+kworker/u3:0: No such file or directory
+charger_manager: no process found
+scsi_eh_2: no process found
+scsi_tmf_2: no process found
+cryptd: no process found
+kdmflush: no process found
+raid5wq: no process found
+jbd2/dm-0-8: No such file or directory
+ext4-rsv-conver: no process found
+systemd-journal: no process found
+kaluad: no process found
+kmpath_rdacd: no process found
+kmpathd: no process found
+kmpath_handlerd: no process found
+multipathd: no process found
+systemd-udevd: no process found
+jbd2/sda2-8: No such file or directory
+ext4-rsv-conver: no process found
+kworker/0:3-cgroup_destroy: No such file or directory
+systemd-timesyn: no process found
+systemd-network: no process found
+systemd-resolve: no process found
+cron: no process found
+dbus-daemon: no process found
+networkd-dispat: no process found
+polkitd: no process found
+rsyslogd: no process found
+snapd: no process found
+systemd-logind: no process found
+udisksd: no process found
+agetty: no process found
+ModemManager: no process found
+unattended-upgr: no process found
+mysqld: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+postgres: no process found
+systemd: no process found
+(sd-pam): no process found
+sh: no process found
+node: no process found
+node: no process found
+node: no process found
+bash: no process found
+bash: no process found
+dbus-daemon: no process found
+bash: no process found
+npm: no process found
+start: no process found
+sh: no process found
+node: no process found
+node: no process found
+upowerd: no process found
+sshd: no process found
+packagekitd: no process found
+node: no process found
+node: no process found
+node: no process found
+node: no process found
+node: no process found
+node: no process found
+npm: no process found
+run: no process found
+dev: no process found
+sh: no process found
+node: no process found
+bash: no process found
+node: no process found
+node: no process found
+node: no process found
+kworker/u2:0-events_unbound: No such file or directory
+kworker/u2:1-events_power_efficient: No such file or directory
+kworker/0:0-events: No such file or directory
+sshd: no process found
+sshd: no process found
+bash: no process found
+bash: no process found
+kworker/u2:2-events_unbound: No such file or directory
+kworker/u2:3-events_unbound: No such file or directory
+sh: no process found
+cpuUsage.sh: no process found
+sleep: no process found
+sh: no process found
+ps: no process found
+xargs: no process found
+
+2024-07-02 15:09:37 info: Environment setup for 40_get_subdomains_from_ssl.sh completed: Sandbox setup is not required for testing 40_get_subdomains_from_ssl.sh
+
+2024-07-02 15:09:53 info: Script 40_get_subdomains_from_ssl.sh executed successfully: microsoft.com,
+s.microsoft.com,
+ga.microsoft.com,
+aep.microsoft.com,
+aer.microsoft.com,
+grv.microsoft.com,
+hup.microsoft.com,
+mac.microsoft.com,
+mkb.microsoft.com,
+pme.microsoft.com,
+pmi.microsoft.com,
+rss.microsoft.com,
+sar.microsoft.com,
+tco.microsoft.com,
+fuse.microsoft.com,
+ieak.microsoft.com,
+mac2.microsoft.com,
+mcsp.microsoft.com,
+open.microsoft.com,
+shop.microsoft.com,
+spur.microsoft.com,
+itpro.microsoft.com,
+mango.microsoft.com,
+music.microsoft.com,
+pymes.microsoft.com,
+store.microsoft.com,
+aether.microsoft.com,
+alerts.microsoft.com,
+design.microsoft.com,
+garage.microsoft.com,
+gigjam.microsoft.com,
+msctec.microsoft.com,
+online.microsoft.com,
+stream.microsoft.com,
+afflink.microsoft.com,
+connect.microsoft.com,
+develop.microsoft.com,
+domains.microsoft.com,
+example.microsoft.com,
+madeira.microsoft.com,
+msdnisv.microsoft.com,
+mspress.microsoft.com,
+sponsor.microsoft.com,
+www.aep.microsoft.com,
+www.aer.microsoft.com,
+wwwbeta.microsoft.com,
+business.microsoft.com,
+empresas.microsoft.com,
+learning.microsoft.com,
+msdnwiki.microsoft.com,
+openness.microsoft.com,
+pinpoint.microsoft.com,
+snackbox.microsoft.com,
+sponsors.microsoft.com,
+stationq.microsoft.com,
+aistories.microsoft.com,
+community.microsoft.com,
+crawlmsdn.microsoft.com,
+iotschool.microsoft.com,
+messenger.microsoft.com,
+minecraft.microsoft.com,
+backoffice.microsoft.com,
+enterprise.microsoft.com,
+iotcentral.microsoft.com,
+pinunblock.microsoft.com,
+reroute443.microsoft.com,
+communities.microsoft.com,
+explore-smb.microsoft.com,
+expressions.microsoft.com,
+ondernemers.microsoft.com,
+techacademy.microsoft.com,
+terraserver.microsoft.com,
+communities2.microsoft.com,
+connectevent.microsoft.com,
+dataplatform.microsoft.com,
+entrepreneur.microsoft.com,
+hxd.research.microsoft.com,
+mspartnerira.microsoft.com,
+mydatahealth.microsoft.com,
+oemcommunity.microsoft.com,
+real-stories.microsoft.com,
+www.formspro.microsoft.com,
+futuredecoded.microsoft.com,
+upgradecenter.microsoft.com,
+learnanalytics.microsoft.com,
+onlinelearning.microsoft.com,
+businesscentral.microsoft.com,
+cloud-immersion.microsoft.com,
+studentpartners.microsoft.com,
+analyticspartner.microsoft.com,
+businessplatform.microsoft.com,
+explore-security.microsoft.com,
+kleinunternehmen.microsoft.com,
+partnercommunity.microsoft.com,
+explore-marketing.microsoft.com,
+innovationcontest.microsoft.com,
+partnerincentives.microsoft.com,
+phoenixcataloguat.microsoft.com,
+szkolyprzyszlosci.microsoft.com,
+www.powerautomate.microsoft.com,
+successionplanning.microsoft.com,
+lumiaconversationsuk.microsoft.com,
+successionplanninguat.microsoft.com,
+businessmobilitycenter.microsoft.com,
+skypeandteams.fasttrack.microsoft.com,
+www.microsoftdlapartnerow.microsoft.com,
+commercialappcertification.microsoft.com,
+www.skypeandteams.fasttrack.microsoft.com,
+ceoconnections.event.microsoft.com,
+biz4afrika.microsoft.com,
+cashback.microsoft.com,
+www.cashback.microsoft.com,
+visio.microsoft.com,
+insidemsr.microsoft.com,
+developervelocityassessment.com,
+www.developervelocityassessment.com,
+gears5.com,
+www.gears5.com,
+www.gearstactics.com,
+gearstactics.com,
+m12.microsoft.com,
+seeingai.com,
+www.seeingai.com,
+msrgamut.microsoft.com,
+yourchoice.microsoft.com,
+mvtd.events.microsoft.com,
+imagine.microsoft.com,
+microsoft.com.au,
+www.microsoft.com.au,
+dynamics.microsoft.com,
+powerbi.microsoft.com,
+powerplatform.microsoft.com,
+powerapps.microsoft.com,
+powerautomate.microsoft.com,
+powervirtualagents.microsoft.com,
+powerpages.microsoft.com
+Task completed
+
+2024-07-02 15:10:11 info: Environment setup for 19_copy_directory_with_links.sh completed: Created test_dir with file1 and symbolic link link1
+Sandbox setup for testing 19_copy_directory_with_links.sh completed
+
+2024-07-02 15:10:15 info: Script 19_copy_directory_with_links.sh executed successfully: Backup directory contents:
+total 0
+-rw-rw-r-- 2 ask ask  0 Jul  2 15:10 file1
+-rw-rw-r-- 2 ask ask  0 Jul  2 15:10 hardlink1
+lrwxrwxrwx 1 ask ask 54 Jul  2 15:10 link1 -> /home/ask/ubuntu-scripts-tester/sandbox/test_dir/file1
+Rsync backup directory contents:
+total 0
+-rw-rw-r-- 1 ask ask  0 Jul  2 15:10 file1
+-rw-rw-r-- 1 ask ask  0 Jul  2 15:10 hardlink1
+lrwxrwxrwx 1 ask ask 54 Jul  2 15:10 link1 -> /home/ask/ubuntu-scripts-tester/sandbox/test_dir/file1
+Task completed
+
+2024-07-02 15:19:56 info: Environment setup for 39_get_raised_interfaces_ips.sh completed: Sandbox setup is not required for testing 39_get_raised_interfaces_ips.sh
+
+2024-07-02 15:19:57 info: Script 39_get_raised_interfaces_ips.sh executed successfully: inet 192.168.194.24/24
+inet6 fe80::be24:11ff:fe04:36c6/64
+
+Task completed
+
+2024-07-02 15:19:58 info: Environment destroyed for 39_get_raised_interfaces_ips.sh: Environment setup was not required
+
