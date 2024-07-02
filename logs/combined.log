@@ -1,0 +1,161 @@
+2024-07-02 13:53:25 info: Server running on port 5001
+2024-07-02 13:53:51 info: Environment setup for 1_find_system_groups.sh completed: Created sandbox directory and test_passwd file
+Sandbox setup for testing 1_find_system_groups.sh completed
+
+2024-07-02 13:53:52 info: Script 1_find_system_groups.sh executed successfully: root:0
+daemon:1
+bin:2
+sys:3
+adm:4
+tty:5
+disk:6
+lp:7
+mail:8
+news:9
+uucp:10
+man:12
+proxy:13
+kmem:15
+dialout:20
+fax:21
+voice:22
+cdrom:24
+floppy:25
+tape:26
+sudo:27
+audio:29
+dip:30
+www-data:33
+backup:34
+operator:37
+list:38
+irc:39
+src:40
+gnats:41
+shadow:42
+utmp:43
+video:44
+sasl:45
+plugdev:46
+staff:50
+games:60
+users:100
+systemd-journal:101
+systemd-network:102
+systemd-resolve:103
+messagebus:104
+systemd-timesync:105
+input:106
+sgx:107
+kvm:108
+render:109
+lxd:110
+_ssh:111
+crontab:112
+syslog:113
+uuidd:114
+tcpdump:115
+tss:116
+landscape:117
+fwupd-refresh:118
+mysql:119
+ssl-cert:120
+postgres:121
+mongodb:122
+Task completed
+
+2024-07-02 13:53:53 info: Environment destroyed for 1_find_system_groups.sh: 
+2024-07-02 13:54:43 info: Server running on port 5001
+2024-07-02 13:54:44 info: Server running on port 5001
+2024-07-02 14:09:54 info: Server running on port 5001
+2024-07-02 14:11:38 info: Environment setup for 2_find_files_with_access_rights.sh completed: Created test_dir with files and subdirectories, set permissions
+Sandbox setup for testing 2_find_files_with_access_rights.sh completed
+
+2024-07-02 14:11:40 info: Environment destroyed for 2_find_files_with_access_rights.sh: 
+2024-07-02 14:11:41 info: Environment setup for 2_find_files_with_access_rights.sh completed: Created test_dir with files and subdirectories, set permissions
+Sandbox setup for testing 2_find_files_with_access_rights.sh completed
+
+2024-07-02 14:11:41 info: Script 2_find_files_with_access_rights.sh executed successfully: ./scripts/temp
+./node_modules/is-glob
+./node_modules/readdirp
+./node_modules/cors
+./node_modules/cors/lib
+./node_modules/binary-extensions
+./node_modules/semver
+./node_modules/semver/bin
+./node_modules/semver/bin/semver
+./node_modules/nodemon
+./node_modules/nodemon/lib
+./node_modules/nodemon/lib/config
+./node_modules/nodemon/lib/rules
+./node_modules/nodemon/lib/monitor
+./node_modules/nodemon/lib/help
+./node_modules/nodemon/lib/cli
+./node_modules/nodemon/lib/utils
+./node_modules/nodemon/doc
+./node_modules/nodemon/doc/cli
+./node_modules/nodemon/node_modules
+./node_modules/nodemon/node_modules/ms
+./node_modules/nodemon/node_modules/debug
+./node_modules/nodemon/node_modules/debug/src
+./node_modules/nodemon/bin
+./node_modules/nodemon/bin/nodemon.js
+./node_modules/balanced-match
+./node_modules/balanced-match/.github
+./node_modules/simple-update-notifier
+./node_modules/simple-update-notifier/node_modules
+./node_modules/simple-update-notifier/node_modules/semver
+./node_modules/simple-update-notifier/node_modules/semver/classes
+./node_modules/simple-update-notifier/node_modules/semver/ranges
+./node_modules/simple-update-notifier/node_modules/semver/bin
+./node_modules/simple-update-notifier/node_modules/semver/bin/semver.js
+./node_modules/simple-update-notifier/node_modules/semver/functions
+./node_modules/simple-update-notifier/node_modules/semver/internal
+./node_modules/simple-update-notifier/node_modules/.bin
+./node_modules/simple-update-notifier/node_modules/.bin/semver
+./node_modules/simple-update-notifier/build
+./node_modules/simple-update-notifier/src
+./node_modules/anymatch
+./node_modules/object-assign
+./node_modules/supports-color
+./node_modules/is-number
+./node_modules/has-flag
+./node_modules/pstree.remy
+./node_modules/pstree.remy/lib
+./node_modules/pstree.remy/tests
+./node_modules/pstree.remy/tests/fixtures
+./node_modules/normalize-path
+./node_modules/concat-map
+./node_modules/concat-map/example
+./node_modules/concat-map/test
+./node_modules/brace-expansion
+./node_modules/chokidar
+./node_modules/chokidar/lib
+./node_modules/chokidar/types
+./node_modules/fill-range
+./node_modules/touch
+./node_modules/touch/bin
+./node_modules/touch/bin/nodetouch.js
+./node_modules/to-regex-range
+./node_modules/picomatch
+./node_modules/picomatch/lib
+./node_modules/minimatch
+./node_modules/glob-parent
+./node_modules/undefsafe
+./node_modules/undefsafe/.github
+./node_modules/undefsafe/.github/workflows
+./node_modules/undefsafe/lib
+./node_modules/ignore-by-default
+./node_modules/braces
+./node_modules/braces/lib
+./node_modules/is-extglob
+./node_modules/.bin/mime
+./node_modules/.bin/semver
+./node_modules/.bin/nodemon
+./node_modules/.bin/nodetouch
+./node_modules/is-binary-path
+./utils
+./sym_dir
+Task completed
+
+2024-07-02 14:11:42 info: Environment destroyed for 2_find_files_with_access_rights.sh: 
